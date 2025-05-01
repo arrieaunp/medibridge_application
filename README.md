@@ -17,7 +17,7 @@ MediBridge supports three main user roles:
 ## 📱 Download Android App (.apk)
 
 You can try the application by downloading the latest APK here:  
-👉 [**Download MediBridge.apk**](https://github.com/arrieaunp/medibridge_application/releases/latest/download/MediBridge.apk)
+👉 [**Download MediBridge.apk**](https://github.com/arrieaunp/medibridge_application/releases/latest/download/app.apk)
 
 > ⚠️ Make sure to enable **"Install from Unknown Sources"** on your Android device before installing.
 
