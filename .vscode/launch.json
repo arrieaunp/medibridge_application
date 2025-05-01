@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "medibridge_application",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Android",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "emulator-5554"
+        },
+        {
+            "name": "iPhone15pro",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "76E68EA4-DD62-4B9B-9972-A978A2C971DA"
+        },
+        {
+            "name": "Chrome",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "chrome"
+        },
+
+
+    ],
+    "compounds": [
+        {
+            "name": "All Devices",
+            "configurations": ["Android","iPhone15pro","Chrome"]
+        }
+    ]
+}

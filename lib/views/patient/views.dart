@@ -1,0 +1,11 @@
+export 'register_page.dart';
+export 'home_patient.dart';
+export 'profile_patient.dart';
+export '1_appointment_page.dart';
+export '2_appointment_page.dart';
+export '3_appointment_page.dart';
+export 'status_appointment_page.dart';
+export 'medical_record_page.dart';
+export 'status_payment_page.dart';
+export 'payment_page.dart';
+export 'notification_patient_page.dart';

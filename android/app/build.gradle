@@ -1,0 +1,65 @@
+def facebookAppId = project.hasProperty("FACEBOOK_APP_ID") ? project.FACEBOOK_APP_ID : ""
+def facebookClientToken = project.hasProperty("FACEBOOK_CLIENT_TOKEN") ? project.FACEBOOK_CLIENT_TOKEN : ""
+def facebookProtocol = project.hasProperty("FACEBOOK_LOGIN_PROTOCOL") ? project.FACEBOOK_LOGIN_PROTOCOL : ""
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'dev.flutter.flutter-gradle-plugin'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdkVersion 34
+    namespace = "com.example.medibridge_application"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId "com.example.medibridge_application"
+        minSdkVersion 23
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0.0"
+
+        //Inject Facebook values into Android resource
+        resValue "string", "facebook_app_id", facebookAppId
+        resValue "string", "facebook_client_token", facebookClientToken
+        resValue "string", "fb_login_protocol_scheme", facebookProtocol
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:32.3.1') 
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-crashlytics'
+}
+
+configurations.all {
+    resolutionStrategy {
+        exclude group: "com.google.firebase", module: "firebase-iid"
+    }
+}

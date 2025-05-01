@@ -1,0 +1,6 @@
+{
+    "git.ignoreLimitWarning": true,
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "cmake.sourceDirectory": "/Users/aunchisachanatipakul/medibridge_application/linux/flutter",
+    "java.compile.nullAnalysis.mode": "automatic"
+}
